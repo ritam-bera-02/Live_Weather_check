@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111827">
+    <title>Weatherly — Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main class="app-shell">
+        <section class="weather-card" aria-label="Weather application">
+            <header class="topbar">
+                <div class="brand">
+                    <div class="brand-icon">☁</div>
+                    <div>
+                        <h1>Weatherly</h1>
+                        <p>Live weather, simply explained</p>
+                    </div>
+                </div>
+                <div class="status-dot" title="Live weather"></div>
+            </header>
+
+            <form id="search-form" class="search-box">
+                <span class="search-icon">⌕</span>
+                <input
+                    type="text"
+                    id="city"
+                    placeholder="Search city..."
+                    autocomplete="off"
+                    aria-label="City name"
+                >
+                <button type="submit" id="search-btn">
+                    <span>Search</span>
+                </button>
+            </form>
+
+            <p id="message" class="message" role="status"></p>
+
+            <section id="weather-content" class="weather-content hidden">
+                <div class="location-row">
+                    <div>
+                        <p class="eyebrow">CURRENT WEATHER</p>
+                        <h2 id="city-name">Kolkata</h2>
+                        <p id="weather-description" class="description">Clear sky</p>
+                    </div>
+                    <div id="current-time" class="current-time">--:--</div>
+                </div>
+
+                <div class="current-weather">
+                    <div class="temperature-wrap">
+                        <img id="weather-icon" src="" alt="">
+                        <div>
+                            <div id="temperature" class="temperature">--°</div>
+                            <p id="feels-like" class="feels-like">Feels like --°C</p>
+                        </div>
+                    </div>
+                    <div class="weather-main-text">
+                        <span id="weather-condition" class="condition-pill">--</span>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <article class="stat-card">
+                        <span class="stat-icon">💧</span>
+                        <div>
+                            <span class="stat-label">Humidity</span>
+                            <strong id="humidity">--%</strong>
+                        </div>
+                    </article>
+                    <article class="stat-card">
+                        <span class="stat-icon">💨</span>
+                        <div>
+                            <span class="stat-label">Wind</span>
+                            <strong id="wind">-- km/h</strong>
+                        </div>
+                    </article>
+                    <article class="stat-card">
+                        <span class="stat-icon">🌡️</span>
+                        <div>
+                            <span class="stat-label">Pressure</span>
+                            <strong id="pressure">-- hPa</strong>
+                        </div>
+                    </article>
+                    <article class="stat-card">
+                        <span class="stat-icon">👁️</span>
+                        <div>
+                            <span class="stat-label">Visibility</span>
+                            <strong id="visibility">-- km</strong>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="forecast-section">
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">UPCOMING</p>
+                            <h3>Next 24 Hours</h3>
+                        </div>
+                        <span class="forecast-note">3-hour forecast</span>
+                    </div>
+                    <div id="hourly-forecast" class="forecast-list"></div>
+                </div>
+            </section>
+
+            <section id="empty-state" class="empty-state">
+                <div class="empty-icon">🌤️</div>
+                <h2>Check the weather</h2>
+                <p>Enter a city name above to see live temperature, conditions and the next 24 hours.</p>
+            </section>
+
+            <footer>
+                
+                <span>•</span>
+                <span>Live data</span>
+            </footer>
+        </section>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>
